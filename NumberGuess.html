@@ -15,7 +15,7 @@
         <p>We have selected a random number between 1 and 100.
             See if you can guess it in 10 turns or fewer.
             We'll tell you if your guess was too high or too low.</p>
-        <p id="userNumbers"></p>
+        <p id="clue"></p>
         <ul class="userInputs"></ul>
         <p id="declare"></p>
             <input type="number" min="1" max="100" id="inputField" autofocus>
@@ -81,7 +81,13 @@ document.addEventListener("DOMContentLoaded", () =>{
             if(userInput == answer){
                 stopGame();
                 alert("Hurray! You won the game!");
+            }else if(userInput > answer){
+                document.getElementById("clue").innerHTML = "Your answer was high";
             }
+            else if(userInput < answer){
+                document.getElementById("clue").innerHTML = "Your answer was low";
+            }
+            
             document.getElementById("inputField").focus();
             console.log(count);
         }
