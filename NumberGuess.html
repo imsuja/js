@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     document.getElementById("submitButton").addEventListener("click", ()=>{
         if(document.getElementById("submitButton").value == "Start Game"){
             startGame();
+            document.getElementById("clue").innerHTML = "Lets go!.......";
             }
         else if(count == 10){
             alert(`Game Over! \nAnswer was ${answer} \nThanks for playing😊`);
